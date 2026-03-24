@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LawVision Strategy — 2026 Master Roadmap</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:       #1e3254;
+    --navy-deep:  #162540;
+    --navy-mid:   #2a4a72;
+    --orange:     #e0601a;
+    --orange-lt:  #f5ece4;
+    --navy-lt:    #eaf0f8;
+    --bg:         #f0f4f8;
+    --rule:       #d8e2ee;
+    --text-dark:  #1e3254;
+    --text-mid:   #4a6080;
+    --text-lt:    #7a90aa;
+    --white:      #ffffff;
+
+    /* Track colors — richer, on-brand */
+    --profit:   #1e3254;
+    --pricing:  #2a4a72;
+    --exec-ai:  #e0601a;
+    --exec-ai2: #c04e10;
+    --exec-ai3: #a03e08;
+    --events:   #e0601a;
+    --industry: #2a6040;
+    --afa:      #1a5fa8;
+    --themes:   #5a4a2a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text-dark);
+    min-height: 100vh;
+    padding: 40px 20px 80px;
+  }
+
+  .page {
+    max-width: 1140px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 4px;
+    box-shadow: 0 6px 32px rgba(30,50,84,0.13);
+    overflow: hidden;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--navy);
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    border-bottom: 3px solid var(--orange);
+  }
+  .masthead-brand {
+    background: var(--navy-deep);
+    padding: 20px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    flex-shrink: 0;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .masthead-name {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    line-height: 1;
+    color: var(--white);
+  }
+  .masthead-name span { color: var(--orange); }
+  .masthead-tagline {
+    font-size: 10px;
+    font-style: italic;
+    color: rgba(255,255,255,0.45);
+    margin-top: 2px;
+    font-weight: 400;
+  }
+  .masthead-title {
+    padding: 20px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+  }
+  .masthead-doc {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    letter-spacing: -0.2px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: rgba(168,188,218,0.85);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .masthead-right {
+    margin-left: auto;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .masthead-badge {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(168,188,218,0.9);
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 4px 12px;
+    border-radius: 3px;
+  }
+
+  /* ── INNER CONTENT WRAPPER ── */
+  .page-inner {
+    padding: 36px 40px 52px;
+  }
+
+  /* ── VIEW TOGGLE ── */
+  .toggle-bar {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 32px;
+  }
+  .toggle-btn {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 7px 18px;
+    border-radius: 3px;
+    border: 1px solid var(--rule);
+    background: var(--white);
+    color: var(--text-lt);
+    cursor: pointer;
+    transition: all 0.18s;
+  }
+  .toggle-btn.active, .toggle-btn:hover {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+  }
+
+  /* ── LEGEND ── */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-bottom: 32px;
+    padding: 14px 18px;
+    background: var(--navy-lt);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--text-mid);
+  }
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ── WORKSTREAM DIVIDER ── */
+  .stream-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin: 40px 0 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    opacity: 0.85;
+  }
+  .stream-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .stream-label .stream-tag {
+    background: var(--orange-lt);
+    border: 1px solid rgba(224,96,26,0.25);
+    color: var(--orange);
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 600;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: var(--rule);
+  }
+
+  /* ── TRACK ── */
+  .track {
+    position: relative;
+    margin-bottom: 10px;
+    animation: fadeRight 0.5s ease both;
+  }
+  .track-dot {
+    position: absolute;
+    left: -35px;
+    top: 16px;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    border: 2px solid var(--rule);
+    background: var(--white);
+    z-index: 2;
+  }
+
+  .track[data-t="profit"]   .track-dot { border-color: var(--profit);   background: var(--profit); }
+  .track[data-t="pricing"]  .track-dot { border-color: var(--pricing);  background: var(--pricing); }
+  .track[data-t="ai1"]      .track-dot { border-color: var(--exec-ai);  background: var(--exec-ai); }
+  .track[data-t="ai2"]      .track-dot { border-color: var(--exec-ai2); background: var(--exec-ai2); }
+  .track[data-t="ai3"]      .track-dot { border-color: var(--exec-ai3); background: var(--exec-ai3); }
+  .track[data-t="event"]    .track-dot { border-color: var(--events);   background: var(--events); }
+  .track[data-t="industry"] .track-dot { border-color: var(--industry); background: var(--industry); }
+  .track[data-t="afa"]      .track-dot { border-color: var(--afa);      background: var(--afa); }
+  .track[data-t="themes"]   .track-dot { border-color: var(--themes);   background: var(--themes); }
+
+  .track-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+    transition: box-shadow 0.18s;
+    box-shadow: 0 1px 4px rgba(30,50,84,0.06);
+  }
+  .track-card:hover { box-shadow: 0 4px 16px rgba(30,50,84,0.12); }
+
+  .track[data-t="profit"]   .track-card { border-left-color: var(--profit); }
+  .track[data-t="pricing"]  .track-card { border-left-color: var(--pricing); }
+  .track[data-t="ai1"]      .track-card { border-left-color: var(--exec-ai); }
+  .track[data-t="ai2"]      .track-card { border-left-color: var(--exec-ai2); }
+  .track[data-t="ai3"]      .track-card { border-left-color: var(--exec-ai3); }
+  .track[data-t="event"]    .track-card { border-left-color: var(--events); background: #fffbf8; }
+  .track[data-t="industry"] .track-card { border-left-color: var(--industry); }
+  .track[data-t="afa"]      .track-card { border-left-color: var(--afa); }
+  .track[data-t="themes"]   .track-card { border-left-color: var(--themes); }
+
+  .track-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 14px 18px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .track-left {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .track-num {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-lt);
+    flex-shrink: 0;
+  }
+  .track-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.1px;
+  }
+  .track-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .track-dates {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--navy-mid);
+    background: var(--navy-lt);
+    border: 1px solid var(--rule);
+    padding: 3px 10px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  .track-badge {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .badge-survey  { background: var(--navy-lt); color: var(--navy); border: 1px solid var(--rule); }
+  .badge-event   { background: var(--orange-lt); color: var(--orange); border: 1px solid rgba(224,96,26,0.25); }
+  .badge-content { background: #e8f4ee; color: #2a6040; border: 1px solid #b8d8c4; }
+  .badge-ai      { background: var(--orange-lt); color: var(--orange); border: 1px solid rgba(224,96,26,0.25); }
+  .badge-tranche { background: #f5ece4; color: #a03e08; border: 1px solid rgba(160,62,8,0.2); }
+
+  .expand-icon {
+    font-size: 12px;
+    color: var(--text-lt);
+    transition: transform 0.25s;
+    margin-left: 4px;
+    flex-shrink: 0;
+  }
+  .track-card.open .expand-icon { transform: rotate(180deg); }
+
+  .track-deliverable {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10.5px;
+    font-weight: 500;
+    color: var(--orange);
+    padding: 0 18px 12px;
+    letter-spacing: 0.2px;
+  }
+  .track-deliverable::before { content: '✦'; font-size: 8px; }
+
+  /* ── EXPANDED DETAIL ── */
+  .track-detail {
+    display: none;
+    padding: 0 18px 18px;
+    border-top: 1px solid var(--rule);
+    background: var(--navy-lt);
+  }
+  .track-card.open .track-detail { display: block; }
+
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .detail-block {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 12px 14px;
+    box-shadow: 0 1px 3px rgba(30,50,84,0.05);
+  }
+  .detail-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-lt);
+    margin-bottom: 5px;
+  }
+  .detail-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .detail-items { list-style: none; }
+  .detail-items li {
+    font-size: 11px;
+    color: var(--text-mid);
+    font-weight: 400;
+    padding: 2px 0 2px 12px;
+    position: relative;
+    line-height: 1.45;
+  }
+  .detail-items li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    font-size: 9px;
+    color: var(--text-lt);
+  }
+
+  /* ── CALENDAR / SWIMLANES ── */
+  .month-bar {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2px;
+    margin: 36px 0 0 140px;
+  }
+  .month-cell {
+    text-align: center;
+    padding: 6px 2px;
+    background: var(--navy-lt);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-mid);
+  }
+  .month-cell.active { background: var(--navy-lt); color: var(--navy); border-color: var(--navy-mid); font-weight: 800; }
+  .month-cell.event-month { background: var(--orange-lt); color: var(--orange); border-color: rgba(224,96,26,0.4); font-weight: 800; }
+
+  .swimlane-container { margin: 4px 0 0 0; }
+  .swimlane {
+    display: grid;
+    grid-template-columns: 140px repeat(12, 1fr);
+    gap: 2px;
+    margin-bottom: 3px;
+    align-items: center;
+  }
+  .swimlane-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    padding-right: 10px;
+    text-align: right;
+    line-height: 1.3;
+  }
+  .swimlane-cell { height: 24px; border-radius: 2px; }
+  .bar {
+    height: 100%;
+    border-radius: 2px;
+    opacity: 0.88;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: rgba(255,255,255,0.92);
+    overflow: hidden;
+    white-space: nowrap;
+    transition: opacity 0.18s;
+  }
+  .bar:hover { opacity: 1; }
+  .bar-profit   { background: var(--profit); }
+  .bar-pricing  { background: var(--pricing); }
+  .bar-ai       { background: var(--exec-ai); }
+  .bar-events   { background: var(--events); }
+  .bar-industry { background: var(--industry); }
+  .bar-afa      { background: var(--afa); }
+  .bar-themes   { background: var(--themes); }
+
+  .span-1  { grid-column: span 1; }
+  .span-2  { grid-column: span 2; }
+  .span-3  { grid-column: span 3; }
+  .span-4  { grid-column: span 4; }
+  .span-5  { grid-column: span 5; }
+  .span-6  { grid-column: span 6; }
+  .span-7  { grid-column: span 7; }
+  .span-8  { grid-column: span 8; }
+  .span-9  { grid-column: span 9; }
+  .span-12 { grid-column: span 12; }
+  .empty   { background: transparent; }
+
+  /* ── EVENTS BANNER ── */
+  .events-banner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 16px 0 0 0;
+  }
+  .event-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--orange);
+    border-radius: 3px;
+    padding: 10px 16px;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 1px 4px rgba(30,50,84,0.06);
+  }
+  .event-icon { font-size: 18px; }
+  .event-date {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--orange);
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+  .event-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .event-partner {
+    font-size: 10px;
+    color: var(--text-lt);
+    margin-top: 1px;
+  }
+
+  /* ── SUMMARY GRID ── */
+  .summary { margin-top: 44px; }
+  .summary h2 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 3px;
+    letter-spacing: -0.2px;
+  }
+  .summary-sub {
+    font-size: 11px;
+    color: var(--text-lt);
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .summary-cell {
+    padding: 13px 15px;
+    background: var(--white);
+    transition: background 0.15s;
+    cursor: default;
+  }
+  .summary-cell:hover { background: var(--navy-lt); }
+  .s-track {
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: var(--text-lt);
+    margin-bottom: 4px;
+  }
+  .s-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 3px;
+    line-height: 1.3;
+  }
+  .s-date {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-mid);
+    margin-bottom: 3px;
+  }
+  .s-output {
+    font-size: 10px;
+    color: var(--text-lt);
+    line-height: 1.35;
+  }
+  .s-profit   .s-title { color: var(--navy); }
+  .s-pricing  .s-title { color: var(--navy-mid); }
+  .s-ai       .s-title { color: var(--orange); }
+  .s-event    .s-title { color: var(--orange); }
+  .s-industry .s-title { color: #2a6040; }
+  .s-afa      .s-title { color: var(--afa); }
+  .s-themes   .s-title { color: var(--themes); }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 0;
+    background: var(--navy);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .footer-left {
+    font-size: 10.5px;
+    color: rgba(168,188,218,0.7);
+    font-style: italic;
+  }
+  .footer-right {
+    font-size: 10.5px;
+    color: rgba(168,188,218,0.7);
+    text-align: right;
+  }
+  .footer-right strong { color: #a8bcda; font-weight: 600; font-style: normal; }
+
+  /* ── CONNECTOR ROW (calendar section divider) ── */
+  .connector-row {
+    background: var(--navy-lt);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+  }
+  .conn-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+  .conn-line {
+    flex: 1;
+    height: 1px;
+    background: repeating-linear-gradient(90deg, var(--navy) 0, var(--navy) 5px, transparent 5px, transparent 10px);
+    opacity: 0.2;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeRight {
+    from { opacity: 0; transform: translateX(-12px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .track:nth-child(1)  { animation-delay: 0.05s; }
+  .track:nth-child(2)  { animation-delay: 0.10s; }
+  .track:nth-child(3)  { animation-delay: 0.15s; }
+  .track:nth-child(4)  { animation-delay: 0.20s; }
+  .track:nth-child(5)  { animation-delay: 0.25s; }
+  .track:nth-child(6)  { animation-delay: 0.30s; }
+  .track:nth-child(7)  { animation-delay: 0.35s; }
+  .track:nth-child(8)  { animation-delay: 0.40s; }
+  .track:nth-child(9)  { animation-delay: 0.45s; }
+  .track:nth-child(10) { animation-delay: 0.50s; }
+
+  /* View modes */
+  body.view-calendar .timeline,
+  body.view-calendar .stream-label { display: none; }
+  body.view-detail   .month-bar,
+  body.view-detail   .swimlane-container,
+  body.view-detail   .events-banner { display: none; }
+
+  @media (max-width: 700px) {
+    .page { padding: 40px 20px 60px; }
+    .swimlane { grid-template-columns: 80px repeat(12, 1fr); }
+    .swimlane-label { font-size: 7px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="masthead-brand">
+      <div class="masthead-name">Law<span>Vision</span></div>
+      <div class="masthead-tagline">Creating Competitive Advantage</div>
+    </div>
+    <div class="masthead-title">
+      <div class="masthead-doc">2026 Research &amp; Thought Leadership Roadmap</div>
+      <div class="masthead-sub">Three Surveys · Exec AI Series · Confirmed Events · Thematic Campaigns · Jan – Dec 2026</div>
+    </div>
+    <div class="masthead-right">
+      <span class="masthead-badge">Confidential</span>
+      <span class="masthead-badge">Master Plan</span>
+    </div>
+  </div>
+
+  <div class="page-inner">
+
+  <!-- VIEW TOGGLE -->
+  <div class="toggle-bar">
+    <button class="toggle-btn active" onclick="setView('detail')">Detail View</button>
+    <button class="toggle-btn" onclick="setView('calendar')">Calendar View</button>
+    <button class="toggle-btn" onclick="setView('both')">Combined</button>
+  </div>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--profit)"></div>Profit Survey</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--pricing)"></div>Pricing Survey</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--exec-ai)"></div>Exec AI Survey</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--events)"></div>Confirmed Events</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--industry)"></div>Industry Transformation</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--afa)"></div>AFAs &amp; AI Pricing</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--themes)"></div>Thematic Content</div>
+  </div>
+
+
+  <!-- ══════════════════════════════════ -->
+  <!-- WORKSTREAM 1: PROFIT SURVEY       -->
+  <!-- ══════════════════════════════════ -->
+  <div class="stream-label">Workstream 01 &nbsp;·&nbsp; Profit Survey <span class="stream-tag">Jan – Apr 2026</span></div>
+  <div class="timeline">
+
+    <div class="track" data-t="profit">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS01 · A</span>
+            <span class="track-title">Design &amp; Data Capture</span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">Jan – Feb 26</span>
+            <span class="track-badge badge-survey">Survey</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">Final survey dataset closed — currently in progress</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">Jan</div>
+              <div class="detail-title">Instrument Design</div>
+              <ul class="detail-items">
+                <li>Question set finalized</li>
+                <li>Platform configured</li>
+                <li>Pilot test with 3 firms</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Jan–Feb</div>
+              <div class="detail-title">Data Capture</div>
+              <ul class="detail-items">
+                <li>Respondent outreach waves 1–3</li>
+                <li>Reminder cadence</li>
+                <li>Data closed Feb 26</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track" data-t="profit">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS01 · B</span>
+            <span class="track-title">Analysis, Story &amp; Report</span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">Feb 27 – Mar 20</span>
+            <span class="track-badge badge-survey">Survey</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">Published report + AI website + confirmed panel</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">Feb 27 – Mar 7</div>
+              <div class="detail-title">Analysis &amp; Key Messages</div>
+              <ul class="detail-items">
+                <li>Statistical analysis &amp; benchmarks</li>
+                <li>5–7 headline findings</li>
+                <li>"So what" narrative + 3–4 themes</li>
+                <li>Executive summary draft</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Mar 7 – Mar 17</div>
+              <div class="detail-title">Report &amp; Artifact Design</div>
+              <ul class="detail-items">
+                <li>Report structure &amp; first draft</li>
+                <li>Design: layout, charts, visual identity</li>
+                <li>AI interactive website build</li>
+                <li>Internal review &amp; revisions</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Mar 18 – Mar 20</div>
+              <div class="detail-title">Publication &amp; Pre-Launch</div>
+              <ul class="detail-items">
+                <li>Report + AI site finalized</li>
+                <li>Webinar reg page live</li>
+                <li>Panelists confirmed</li>
+                <li>Promo push begins</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track" data-t="profit">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS01 · C</span>
+            <span class="track-title">Webinar &amp; Post-Launch</span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">Mar 22 – Apr 30</span>
+            <span class="track-badge badge-event">Webinar</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">Live event + recording + press + consulting pipeline</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">Apr 14</div>
+              <div class="detail-title">Press &amp; Live Webinar</div>
+              <ul class="detail-items">
+                <li>Press pitch: American Lawyer, Law.com</li>
+                <li>90 min: findings + panel + Q&amp;A</li>
+                <li>Recorded for distribution</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Apr 15–30</div>
+              <div class="detail-title">Amplification</div>
+              <ul class="detail-items">
+                <li>Recording + report distributed to all registrants</li>
+                <li>Consulting conversations via findings</li>
+                <li>Dataset archived for YOY comparison</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /timeline WS01 -->
+
+
+  <!-- ══════════════════════════════════ -->
+  <!-- WORKSTREAM 2: PRICING SURVEY      -->
+  <!-- ══════════════════════════════════ -->
+  <div class="stream-label">Workstream 02 &nbsp;·&nbsp; Pricing Survey <span class="stream-tag">Mar – Jul 2026</span></div>
+  <div class="timeline">
+
+    <div class="track" data-t="pricing">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS02 · A</span>
+            <span class="track-title">Design &amp; Data Capture</span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">Mar 24 – May 31</span>
+            <span class="track-badge badge-survey">Survey</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">Final pricing survey dataset closed</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">Mar 24 – Apr 14</div>
+              <div class="detail-title">Instrument Design</div>
+              <ul class="detail-items">
+                <li>Question set &amp; themes finalized</li>
+                <li>Leverage Profit Survey learnings</li>
+                <li>Platform configured &amp; tested</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Apr 14 – May 31</div>
+              <div class="detail-title">Data Capture</div>
+              <ul class="detail-items">
+                <li>Respondent outreach (leverage Profit Survey list)</li>
+                <li>Reminder cadence; data closed May 31</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track" data-t="pricing">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS02 · B</span>
+            <span class="track-title">Analysis, Story &amp; Report</span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">May 15 – Jun 15</span>
+            <span class="track-badge badge-survey">Survey</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">Published pricing report + AI website</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">May 15 – Jun 1</div>
+              <div class="detail-title">Analysis &amp; Key Messages</div>
+              <ul class="detail-items">
+                <li>Statistical analysis &amp; rate benchmarks</li>
+                <li>Headline findings &amp; narrative</li>
+                <li>Connect to Exec AI Survey Tranche 1 themes</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Jun 1 – Jun 10</div>
+              <div class="detail-title">Report &amp; Artifact Design</div>
+              <ul class="detail-items">
+                <li>Report draft, design, charts</li>
+                <li>AI interactive website</li>
+                <li>Blog post series (2–3 posts)</li>
+                <li>Internal review &amp; final</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Jun 10–15</div>
+              <div class="detail-title">Publication &amp; Pre-Launch</div>
+              <ul class="detail-items">
+                <li>Report + site published</li>
+                <li>Webinar registration live</li>
+                <li>Panelists confirmed</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track" data-t="pricing">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS02 · C</span>
+            <span class="track-title">Webinar &amp; Post-Launch</span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">Jun 15 – Jul 31</span>
+            <span class="track-badge badge-event">Webinar</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">Live event + distribution + press + pipeline</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">Jun 15</div>
+              <div class="detail-title">Live Webinar</div>
+              <ul class="detail-items">
+                <li>90 min: findings + panel + Q&amp;A</li>
+                <li>Connects to Exec AI tranche 2 preview</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Jul</div>
+              <div class="detail-title">Amplification</div>
+              <ul class="detail-items">
+                <li>Full list distribution + press pitch</li>
+                <li>Consulting conversations</li>
+                <li>Tee up Exec AI Tranche 2 (Aug)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /timeline WS02 -->
+
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- WORKSTREAM 3: EXEC AI SURVEY (3 TRANCHES) -->
+  <!-- ══════════════════════════════════════ -->
+  <div class="stream-label">Workstream 03 &nbsp;·&nbsp; Exec AI Survey — 3 Tranches <span class="stream-tag">Apr – Dec 2026</span></div>
+  <div class="timeline">
+
+    <!-- TRANCHE 1 -->
+    <div class="track" data-t="ai1">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS03 · T1</span>
+            <span class="track-title">Tranche 1 — Strategic Posture &amp; Pricing Economics</span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">May – Jul 2026</span>
+            <span class="track-badge badge-ai">Exec AI</span>
+            <span class="track-badge badge-tranche">Tranche 1</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">Report + artifact + webinar on AI Strategic Posture &amp; Pricing Economics</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">May — Design &amp; Capture</div>
+              <div class="detail-title">Themes: Strategic Posture · Pricing &amp; Economics</div>
+              <ul class="detail-items">
+                <li>Survey instrument design</li>
+                <li>Targeted exec respondent outreach</li>
+                <li>Data capture through May</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Jun — Analysis &amp; Story</div>
+              <div class="detail-title">Key Messages</div>
+              <ul class="detail-items">
+                <li>Statistical analysis of exec responses</li>
+                <li>Narrative: how execs view AI's strategic role</li>
+                <li>Connect to Pricing Survey findings</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Jul — Publish &amp; Distribute</div>
+              <div class="detail-title">Artifact &amp; Webinar</div>
+              <ul class="detail-items">
+                <li>Report + blog post series</li>
+                <li>AI-powered interactive site</li>
+                <li>Webinar: executives + LawVision panel</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRANCHE 2 -->
+    <div class="track" data-t="ai2">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS03 · T2</span>
+            <span class="track-title">Tranche 2 — Talent Model, Leverage &amp; Capital Allocation</span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">Aug – Oct 2026</span>
+            <span class="track-badge badge-ai">Exec AI</span>
+            <span class="track-badge badge-tranche">Tranche 2</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">Report + artifact + webinar on Talent Model &amp; Capital Allocation</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">Aug — Design &amp; Capture</div>
+              <div class="detail-title">Themes: Talent Model &amp; Leverage · Capital Allocation</div>
+              <ul class="detail-items">
+                <li>Survey instrument (build on T1 findings)</li>
+                <li>Target same exec cohort + new respondents</li>
+                <li>Data capture through Aug</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Sep — Analysis &amp; Story</div>
+              <div class="detail-title">Key Messages</div>
+              <ul class="detail-items">
+                <li>How execs are restructuring talent in AI era</li>
+                <li>Capital allocation priorities: tech vs. people</li>
+                <li>Connect to Pricing Survey &amp; T1 themes</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Oct — Publish &amp; Distribute</div>
+              <div class="detail-title">Artifact &amp; Webinar</div>
+              <ul class="detail-items">
+                <li>Report + blog post series</li>
+                <li>AI site updated with T2 data</li>
+                <li>Webinar + T3 preview</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRANCHE 3 -->
+    <div class="track" data-t="ai3">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS03 · T3</span>
+            <span class="track-title">Tranche 3 — Structure, Scale &amp; Year-End Synthesis</span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">Nov – Dec 2026</span>
+            <span class="track-badge badge-ai">Exec AI</span>
+            <span class="track-badge badge-tranche">Tranche 3</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">Full synthesis report + capstone webinar + 2027 preview</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">Nov — Design &amp; Capture</div>
+              <div class="detail-title">Theme: Structure &amp; Scale</div>
+              <ul class="detail-items">
+                <li>Final tranche instrument</li>
+                <li>Focus on firm operating model transformation</li>
+                <li>Data capture through Nov</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Dec — Synthesis &amp; Publish</div>
+              <div class="detail-title">Capstone Report</div>
+              <ul class="detail-items">
+                <li>Full Exec AI Survey synthesis (T1+T2+T3)</li>
+                <li>Comprehensive AI-powered report</li>
+                <li>Year-end webinar / virtual event</li>
+                <li>2027 survey preview</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /timeline WS03 -->
+
+
+  <!-- ══════════════════════════════════ -->
+  <!-- WORKSTREAM 4: CONFIRMED EVENTS    -->
+  <!-- ══════════════════════════════════ -->
+  <div class="stream-label">Workstream 04 &nbsp;·&nbsp; Confirmed Events &amp; Partnerships <span class="stream-tag">May + Jun 2026</span></div>
+  <div class="timeline">
+
+    <div class="track" data-t="event">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS04 · E1</span>
+            <span class="track-title">Inside Practice Pricing Webinar</span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">May 13, 2026</span>
+            <span class="track-badge badge-event">Confirmed</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">Live webinar with Inside Practice — pricing strategy focus</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">Pre-Event (Apr–May 12)</div>
+              <div class="detail-title">Prep &amp; Promo</div>
+              <ul class="detail-items">
+                <li>Align with Inside Practice on format &amp; topics</li>
+                <li>Registration page + promo push</li>
+                <li>Incorporate Profit Survey findings as content anchor</li>
+                <li>Slide deck + talking points finalized</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">May 13</div>
+              <div class="detail-title">Event Day</div>
+              <ul class="detail-items">
+                <li>Live webinar with Inside Practice audience</li>
+                <li>Pricing transformation focus</li>
+                <li>Q&amp;A with participants</li>
+                <li>Recording distributed within 48 hrs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track" data-t="event">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS04 · E2</span>
+            <span class="track-title"><a href="https://mmedice.github.io/econ2026/" target="_blank" style="color:inherit;text-decoration:underline;">Financial Innovation &amp; Live NYC Conference</a></span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">Jun 25, 2026</span>
+            <span class="track-badge badge-event">Confirmed · NYC</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">Live in-person conference — NYC — financial innovation in law</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">Pre-Event (May–Jun 24)</div>
+              <div class="detail-title">Prep &amp; Materials</div>
+              <ul class="detail-items">
+                <li>Session topic &amp; format confirmed</li>
+                <li>Physical handouts / summary cards</li>
+                <li>Leverage Profit + Exec AI T1 findings</li>
+                <li>Attendee outreach for LawVision visibility</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Jun 25</div>
+              <div class="detail-title">Event Day — NYC</div>
+              <ul class="detail-items">
+                <li>Presentation / panel at conference</li>
+                <li>Client &amp; prospect meetings</li>
+                <li>Content capture for follow-up article/post</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /timeline WS04 -->
+
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- WORKSTREAM 5: THEMATIC CONTENT CAMPAIGNS  -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="stream-label">Workstream 05 &nbsp;·&nbsp; Thematic Content &amp; Campaigns <span class="stream-tag">Year-Round</span></div>
+  <div class="timeline">
+
+    <div class="track" data-t="industry">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS05 · T1</span>
+            <span class="track-title">Industry Transformation</span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">Mar – Dec (ongoing)</span>
+            <span class="track-badge badge-content">Thought Leadership</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">Article series + webinar + connected to all survey findings</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">Mar–May</div>
+              <div class="detail-title">Exec Pricing Transformation Article</div>
+              <ul class="detail-items">
+                <li>Flagship thought leadership piece</li>
+                <li>Connects to Profit Survey findings</li>
+                <li>Pitch to American Lawyer / Law.com</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Jun–Sep</div>
+              <div class="detail-title">Structural Change: PE &amp; Consolidation</div>
+              <ul class="detail-items">
+                <li>Article: dealing with PE &amp; structural industry change</li>
+                <li>Connects to Exec AI T1/T2 findings</li>
+                <li>Webinar tie-in</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Oct–Dec</div>
+              <div class="detail-title">Making Sense of the Noise</div>
+              <ul class="detail-items">
+                <li>Article + framework: cohesive practice strategy</li>
+                <li>Synthesize year's survey findings</li>
+                <li>Year-end strategic outlook piece</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track" data-t="afa">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS05 · T2</span>
+            <span class="track-title">Creation of AFAs &amp; Alternative Fee Structures</span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">May – Sep</span>
+            <span class="track-badge badge-content">Thought Leadership</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">AFA framework guide + client-facing content + webinar</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">May–Jun</div>
+              <div class="detail-title">AFA Framework Development</div>
+              <ul class="detail-items">
+                <li>Content: types of AFAs + when to use each</li>
+                <li>Practical design guide for law firm leaders</li>
+                <li>Draw on Pricing Survey data</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Jul–Sep</div>
+              <div class="detail-title">Publication &amp; Webinar</div>
+              <ul class="detail-items">
+                <li>Published guide / white paper</li>
+                <li>Webinar: AFA design in practice</li>
+                <li>Connect to NYC conference follow-up content</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track" data-t="afa">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS05 · T3</span>
+            <span class="track-title">AI for Pricing: Client Comms, Benchmarks &amp; Profiles</span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">Jun – Nov</span>
+            <span class="track-badge badge-ai">AI Pricing</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">AI pricing use-case series + demonstration assets + webinar</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">Jun–Aug</div>
+              <div class="detail-title">Use-Case Content Development</div>
+              <ul class="detail-items">
+                <li>Client communication with AI assistance</li>
+                <li>Engagement-level benchmarks via AI</li>
+                <li>Firm &amp; client profile generation</li>
+                <li>Article series (3–4 posts)</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Sep–Nov</div>
+              <div class="detail-title">Demonstration &amp; Webinar</div>
+              <ul class="detail-items">
+                <li>Live AI demo asset (website / tool)</li>
+                <li>Webinar: AI in pricing operations</li>
+                <li>Connect to Exec AI T2 talent findings</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track" data-t="themes">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS05 · T4</span>
+            <span class="track-title">Supercharge Front &amp; Back Office</span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">Aug – Nov</span>
+            <span class="track-badge badge-content">Thought Leadership</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">Playbook article + webinar for firm operations leaders</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">Aug–Sep</div>
+              <div class="detail-title">Content &amp; Framework</div>
+              <ul class="detail-items">
+                <li>Operations transformation framework</li>
+                <li>Connect to Exec AI T2: talent &amp; capital themes</li>
+                <li>Draft article: front-office + back-office integration</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Oct–Nov</div>
+              <div class="detail-title">Publish &amp; Promote</div>
+              <ul class="detail-items">
+                <li>Published playbook / article</li>
+                <li>Webinar: practical operational transformation</li>
+                <li>COO / CFO audience focus</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /timeline WS05 -->
+
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- CALENDAR / SWIMLANE VIEW              -->
+  <!-- ══════════════════════════════════════ -->
+  <div class="stream-label" style="margin-top:52px">Calendar View &nbsp;·&nbsp; 2026 <span class="stream-tag">All Workstreams</span></div>
+
+  <!-- Month headers -->
+  <div class="month-bar">
+    <div class="month-cell">Jan</div>
+    <div class="month-cell active">Feb</div>
+    <div class="month-cell">Mar</div>
+    <div class="month-cell">Apr</div>
+    <div class="month-cell event-month">May ★</div>
+    <div class="month-cell event-month">Jun ★</div>
+    <div class="month-cell">Jul</div>
+    <div class="month-cell">Aug</div>
+    <div class="month-cell">Sep</div>
+    <div class="month-cell">Oct</div>
+    <div class="month-cell">Nov</div>
+    <div class="month-cell">Dec</div>
+  </div>
+
+  <div class="swimlane-container">
+
+    <!-- Profit Survey -->
+    <div class="swimlane">
+      <div class="swimlane-label">Profit Survey</div>
+      <!-- Jan–Feb: capture -->
+      <div class="swimlane-cell span-2"><div class="bar bar-profit">Design · Capture</div></div>
+      <!-- Mar: analysis + report -->
+      <div class="swimlane-cell span-1"><div class="bar bar-profit">Analysis · Story</div></div>
+      <!-- Apr: webinar + post -->
+      <div class="swimlane-cell span-1"><div class="bar bar-profit">🎙 Webinar</div></div>
+      <!-- May–Dec: empty -->
+      <div class="swimlane-cell span-8 empty"></div>
+    </div>
+
+    <!-- Pricing Survey -->
+    <div class="swimlane">
+      <div class="swimlane-label">Pricing Survey</div>
+      <!-- Jan–Feb: empty -->
+      <div class="swimlane-cell span-2 empty"></div>
+      <!-- Mar–May: capture -->
+      <div class="swimlane-cell span-3"><div class="bar bar-pricing">Design · Capture</div></div>
+      <!-- Jun: analysis + report -->
+      <div class="swimlane-cell span-1"><div class="bar bar-pricing">Analysis · Story</div></div>
+      <!-- Jul: webinar -->
+      <div class="swimlane-cell span-1"><div class="bar bar-pricing">🎙 Webinar</div></div>
+      <!-- Aug–Dec: empty -->
+      <div class="swimlane-cell span-5 empty"></div>
+    </div>
+
+    <!-- Exec AI — T1 -->
+    <div class="swimlane">
+      <div class="swimlane-label">Exec AI · T1</div>
+      <div class="swimlane-cell span-4 empty"></div>
+      <div class="swimlane-cell span-1"><div class="bar bar-ai">Capture</div></div>
+      <div class="swimlane-cell span-1"><div class="bar bar-ai">Analysis</div></div>
+      <div class="swimlane-cell span-1"><div class="bar bar-ai">Publish</div></div>
+      <div class="swimlane-cell span-5 empty"></div>
+    </div>
+
+    <!-- Exec AI — T2 -->
+    <div class="swimlane">
+      <div class="swimlane-label">Exec AI · T2</div>
+      <div class="swimlane-cell span-7 empty"></div>
+      <div class="swimlane-cell span-1"><div class="bar bar-ai">Capture</div></div>
+      <div class="swimlane-cell span-1"><div class="bar bar-ai">Analysis</div></div>
+      <div class="swimlane-cell span-1"><div class="bar bar-ai">Publish</div></div>
+      <div class="swimlane-cell span-2 empty"></div>
+    </div>
+
+    <!-- Exec AI — T3 -->
+    <div class="swimlane">
+      <div class="swimlane-label">Exec AI · T3</div>
+      <div class="swimlane-cell span-9 empty"></div>
+      <div class="swimlane-cell span-1"><div class="bar bar-ai">Capture</div></div>
+      <div class="swimlane-cell span-2"><div class="bar bar-ai">Synthesis · Publish</div></div>
+    </div>
+
+    <!-- Confirmed Events -->
+    <div class="swimlane">
+      <div class="swimlane-label">Confirmed Events</div>
+      <div class="swimlane-cell span-4 empty"></div>
+      <div class="swimlane-cell span-1"><div class="bar bar-events">★ May 13</div></div>
+      <div class="swimlane-cell span-1"><div class="bar bar-events">★ Jun 25 NYC</div></div>
+      <div class="swimlane-cell span-6 empty"></div>
+    </div>
+
+    <!-- Industry Transformation -->
+    <div class="swimlane">
+      <div class="swimlane-label">Ind. Transformation</div>
+      <div class="swimlane-cell span-2 empty"></div>
+      <div class="swimlane-cell span-3"><div class="bar bar-industry">Exec Pricing Article</div></div>
+      <div class="swimlane-cell span-4"><div class="bar bar-industry">PE / Structural Change</div></div>
+      <div class="swimlane-cell span-3"><div class="bar bar-industry">Year-End Synthesis</div></div>
+    </div>
+
+    <!-- AFAs -->
+    <div class="swimlane">
+      <div class="swimlane-label">AFAs &amp; AI Pricing</div>
+      <div class="swimlane-cell span-4 empty"></div>
+      <div class="swimlane-cell span-5"><div class="bar bar-afa">AFA Framework + AI Use Cases</div></div>
+      <div class="swimlane-cell span-3"><div class="bar bar-afa">Webinars · Demo Asset</div></div>
+    </div>
+
+    <!-- Front/Back Office -->
+    <div class="swimlane">
+      <div class="swimlane-label">Front/Back Office</div>
+      <div class="swimlane-cell span-7 empty"></div>
+      <div class="swimlane-cell span-4"><div class="bar bar-themes">Article + Webinar</div></div>
+      <div class="swimlane-cell span-1 empty"></div>
+    </div>
+
+  </div><!-- /swimlane-container -->
+
+
+  <!-- CONFIRMED EVENTS CALLOUTS -->
+  <div class="events-banner">
+    <div class="event-pill">
+      <div class="event-icon">🎙</div>
+      <div class="event-info">
+        <div class="event-date">May 13, 2026</div>
+        <div class="event-name">Pricing Webinar</div>
+        <div class="event-partner">Partner: Inside Practice</div>
+      </div>
+    </div>
+    <div class="event-pill">
+      <div class="event-icon">🏙</div>
+      <div class="event-info">
+        <div class="event-date">Jun 25, 2026</div>
+        <div class="event-name">Financial Innovation &amp; Live Conference</div>
+        <div class="event-partner">New York City · In-Person</div>
+      </div>
+    </div>
+    <div class="event-pill">
+      <div class="event-icon">📊</div>
+      <div class="event-info">
+        <div class="event-date">Apr 14, 2026</div>
+        <div class="event-name">Profit Survey Webinar</div>
+        <div class="event-partner">LawVision Research Series</div>
+      </div>
+    </div>
+    <div class="event-pill">
+      <div class="event-icon">📈</div>
+      <div class="event-info">
+        <div class="event-date">Jul 2026</div>
+        <div class="event-name">Pricing Survey Webinar</div>
+        <div class="event-partner">LawVision Research Series</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- SUMMARY GRID -->
+  <div class="summary">
+    <h2>At a Glance — Full Year</h2>
+    <div class="summary-sub">5 workstreams · 3 surveys · 3 exec AI tranches · 2 confirmed external events · 4 thematic campaigns</div>
+    <div class="summary-grid">
+      <div class="summary-cell s-profit">
+        <div class="s-track">WS01 · Profit Survey</div>
+        <div class="s-title">Design → Webinar</div>
+        <div class="s-date">Jan – Apr 2026</div>
+        <div class="s-output">Report + AI site + panel webinar</div>
+      </div>
+      <div class="summary-cell s-pricing">
+        <div class="s-track">WS02 · Pricing Survey</div>
+        <div class="s-title">Design → Webinar</div>
+        <div class="s-date">Mar – Jul 2026</div>
+        <div class="s-output">Report + AI site + panel webinar</div>
+      </div>
+      <div class="summary-cell s-ai">
+        <div class="s-track">WS03 · Exec AI · T1</div>
+        <div class="s-title">Strategic Posture &amp; Pricing Economics</div>
+        <div class="s-date">May – Jul 2026</div>
+        <div class="s-output">Report + artifact + webinar</div>
+      </div>
+      <div class="summary-cell s-ai">
+        <div class="s-track">WS03 · Exec AI · T2</div>
+        <div class="s-title">Talent Model &amp; Capital Allocation</div>
+        <div class="s-date">Aug – Oct 2026</div>
+        <div class="s-output">Report + artifact + webinar</div>
+      </div>
+      <div class="summary-cell s-ai">
+        <div class="s-track">WS03 · Exec AI · T3</div>
+        <div class="s-title">Structure, Scale &amp; Synthesis</div>
+        <div class="s-date">Nov – Dec 2026</div>
+        <div class="s-output">Full synthesis + capstone event</div>
+      </div>
+      <div class="summary-cell s-event">
+        <div class="s-track">WS04 · Confirmed Event</div>
+        <div class="s-title">Inside Practice Webinar</div>
+        <div class="s-date">May 13, 2026</div>
+        <div class="s-output">Pricing strategy · live webinar</div>
+      </div>
+      <div class="summary-cell s-event">
+        <div class="s-track">WS04 · Confirmed Event</div>
+        <div class="s-title">Financial Innovation — NYC</div>
+        <div class="s-date">Jun 25, 2026</div>
+        <div class="s-output">In-person conference · NYC</div>
+      </div>
+      <div class="summary-cell s-industry">
+        <div class="s-track">WS05 · T1</div>
+        <div class="s-title">Industry Transformation</div>
+        <div class="s-date">Mar – Dec</div>
+        <div class="s-output">Article series + webinar + connected findings</div>
+      </div>
+      <div class="summary-cell s-afa">
+        <div class="s-track">WS05 · T2</div>
+        <div class="s-title">Creation of AFAs</div>
+        <div class="s-date">May – Sep</div>
+        <div class="s-output">Framework guide + webinar</div>
+      </div>
+      <div class="summary-cell s-afa">
+        <div class="s-track">WS05 · T3</div>
+        <div class="s-title">AI for Pricing</div>
+        <div class="s-date">Jun – Nov</div>
+        <div class="s-output">Use-case series + demo + webinar</div>
+      </div>
+      <div class="summary-cell s-themes">
+        <div class="s-track">WS05 · T4</div>
+        <div class="s-title">Supercharge Front &amp; Back Office</div>
+        <div class="s-date">Aug – Nov</div>
+        <div class="s-output">Playbook + webinar</div>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /page-inner -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">Copyright 2026 LawVision Strategy, LLC. All rights reserved. Confidential. For internal use only.</div>
+    <div class="footer-right"><strong>Mark Medice</strong>, Principal &nbsp;·&nbsp; mmedice@lawvision.com &nbsp;·&nbsp; 412-721-9475</div>
+  </div>
+
+</div><!-- /page -->
+
+<script>
+  function toggleCard(card) {
+    card.classList.toggle('open');
+  }
+
+  function setView(mode) {
+    document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+
+    const body = document.body;
+    body.className = '';
+    if (mode === 'detail') body.classList.add('view-detail');
+    if (mode === 'calendar') body.classList.add('view-calendar');
+    // 'both' shows everything (default)
+  }
+
+  // Start in "both" view so everything is visible
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.toggle-bar, .legend, .month-bar, .swimlane-container, .events-banner, .summary')
+      .forEach(el => { el.style.opacity = '1'; el.style.animation = 'none'; });
+  });
+</script>
+</body>
+</html>

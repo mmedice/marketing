@@ -30,7 +30,6 @@
     --industry: #2a6040;
     --afa:      #1a5fa8;
     --themes:   #5a4a2a;
-    --pe:       #6b3aa0;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -255,7 +254,6 @@
   .track[data-t="industry"] .track-dot { border-color: var(--industry); background: var(--industry); }
   .track[data-t="afa"]      .track-dot { border-color: var(--afa);      background: var(--afa); }
   .track[data-t="themes"]   .track-dot { border-color: var(--themes);   background: var(--themes); }
-  .track[data-t="pe"]       .track-dot { border-color: var(--pe);       background: var(--pe); }
 
   .track-card {
     background: var(--white);
@@ -277,7 +275,6 @@
   .track[data-t="industry"] .track-card { border-left-color: var(--industry); }
   .track[data-t="afa"]      .track-card { border-left-color: var(--afa); }
   .track[data-t="themes"]   .track-card { border-left-color: var(--themes); }
-  .track[data-t="pe"]       .track-card { border-left-color: var(--pe); }
 
   .track-summary {
     display: flex;
@@ -340,8 +337,6 @@
   .badge-content { background: #e8f4ee; color: #2a6040; border: 1px solid #b8d8c4; }
   .badge-ai      { background: var(--orange-lt); color: var(--orange); border: 1px solid rgba(224,96,26,0.25); }
   .badge-tranche { background: #f5ece4; color: #a03e08; border: 1px solid rgba(160,62,8,0.2); }
-  .badge-pe      { background: #ede4f5; color: #4a2570; border: 1px solid rgba(107,58,160,0.25); }
-  .badge-done    { background: #e4f5ea; color: #1f6b3a; border: 1px solid rgba(31,107,58,0.3); font-weight: 600; }
 
   .expand-icon {
     font-size: 12px;
@@ -421,58 +416,56 @@
   .month-bar {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 3px;
-    margin: 36px 0 0 153px;
+    gap: 2px;
+    margin: 36px 0 0 140px;
   }
   .month-cell {
     text-align: center;
-    padding: 7px 2px;
+    padding: 6px 2px;
     background: var(--navy-lt);
     border: 1px solid var(--rule);
     border-radius: 2px;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 700;
-    letter-spacing: 0.6px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     color: var(--text-mid);
   }
   .month-cell.active { background: var(--navy-lt); color: var(--navy); border-color: var(--navy-mid); font-weight: 800; }
   .month-cell.event-month { background: var(--orange-lt); color: var(--orange); border-color: rgba(224,96,26,0.4); font-weight: 800; }
 
-  .swimlane-container { margin: 8px 0 0 0; }
+  .swimlane-container { margin: 4px 0 0 0; }
   .swimlane {
     display: grid;
-    grid-template-columns: 150px repeat(12, 1fr);
-    gap: 3px;
-    margin-bottom: 4px;
+    grid-template-columns: 140px repeat(12, 1fr);
+    gap: 2px;
+    margin-bottom: 3px;
     align-items: center;
   }
   .swimlane-label {
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 700;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
     color: var(--text-mid);
     padding-right: 10px;
     text-align: right;
     line-height: 1.3;
   }
-  .swimlane-cell { height: 26px; border-radius: 2px; }
+  .swimlane-cell { height: 24px; border-radius: 2px; }
   .bar {
     height: 100%;
     border-radius: 2px;
-    opacity: 0.95;
+    opacity: 0.88;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.2px;
-    color: rgba(255,255,255,0.98);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: rgba(255,255,255,0.92);
     overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
-    padding: 0 4px;
     transition: opacity 0.18s;
   }
   .bar:hover { opacity: 1; }
@@ -483,13 +476,6 @@
   .bar-industry { background: var(--industry); }
   .bar-afa      { background: var(--afa); }
   .bar-themes   { background: var(--themes); }
-  .bar-pe       { background: var(--pe); }
-  .bar-tentative {
-    background-image: repeating-linear-gradient(135deg, var(--pe) 0, var(--pe) 10px, rgba(255,255,255,0.22) 10px, rgba(255,255,255,0.22) 20px);
-    background-color: var(--pe);
-    border: 2px dashed rgba(255,255,255,0.55);
-    opacity: 0.85;
-  }
 
   .span-1  { grid-column: span 1; }
   .span-2  { grid-column: span 2; }
@@ -606,7 +592,6 @@
   .s-industry .s-title { color: #2a6040; }
   .s-afa      .s-title { color: var(--afa); }
   .s-themes   .s-title { color: var(--themes); }
-  .s-pe       .s-title { color: var(--pe); }
 
   /* ── FOOTER ── */
   .footer {
@@ -689,10 +674,8 @@
 
   @media (max-width: 700px) {
     .page { padding: 40px 20px 60px; }
-    .swimlane { grid-template-columns: 90px repeat(12, 1fr); }
-    .swimlane-label { font-size: 8px; }
-    .month-bar { margin-left: 93px; }
-    .bar { font-size: 8px; padding: 0 2px; }
+    .swimlane { grid-template-columns: 80px repeat(12, 1fr); }
+    .swimlane-label { font-size: 7px; }
   }
 </style>
 </head>
@@ -707,7 +690,7 @@
     </div>
     <div class="masthead-title">
       <div class="masthead-doc">2026 Research &amp; Thought Leadership Roadmap</div>
-      <div class="masthead-sub">Three Industry Surveys · AI Transformation Survey · PE Dashboard · Confirmed Events · Thematic Campaigns · Jan – Dec 2026</div>
+      <div class="masthead-sub">Three Surveys · Exec AI Series · Confirmed Events · Thematic Campaigns · Jan – Dec 2026</div>
     </div>
     <div class="masthead-right">
       <span class="masthead-badge">Confidential</span>
@@ -728,8 +711,7 @@
   <div class="legend">
     <div class="legend-item"><div class="legend-dot" style="background:var(--profit)"></div>Profit Survey</div>
     <div class="legend-item"><div class="legend-dot" style="background:var(--pricing)"></div>Pricing Survey</div>
-    <div class="legend-item"><div class="legend-dot" style="background:var(--exec-ai)"></div>AI Transformation</div>
-    <div class="legend-item"><div class="legend-dot" style="background:var(--pe)"></div>PE Dashboard</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--exec-ai)"></div>Exec AI Survey</div>
     <div class="legend-item"><div class="legend-dot" style="background:var(--events)"></div>Confirmed Events</div>
     <div class="legend-item"><div class="legend-dot" style="background:var(--industry)"></div>Industry Transformation</div>
     <div class="legend-item"><div class="legend-dot" style="background:var(--afa)"></div>AFAs &amp; AI Pricing</div>
@@ -893,7 +875,7 @@
             <span class="track-title">Design &amp; Data Capture</span>
           </div>
           <div class="track-meta">
-            <span class="track-dates">Apr 1 – May 22</span>
+            <span class="track-dates">Apr 1 – May 31</span>
             <span class="track-badge badge-survey">Survey</span>
             <span class="expand-icon">▾</span>
           </div>
@@ -911,11 +893,11 @@
               </ul>
             </div>
             <div class="detail-block">
-              <div class="detail-label">Apr 16 – May 22</div>
+              <div class="detail-label">Apr 16 – May 31</div>
               <div class="detail-title">Data Capture</div>
               <ul class="detail-items">
                 <li>Respondent outreach (leverage Profit Survey list)</li>
-                <li>Reminder cadence; data closed May 22</li>
+                <li>Reminder cadence; data closed May 31</li>
               </ul>
             </div>
           </div>
@@ -932,7 +914,7 @@
             <span class="track-title">Analysis, Story &amp; Report</span>
           </div>
           <div class="track-meta">
-            <span class="track-dates">May 23 – Jun 10</span>
+            <span class="track-dates">Jun 1 – Jun 20</span>
             <span class="track-badge badge-survey">Survey</span>
             <span class="expand-icon">▾</span>
           </div>
@@ -941,16 +923,16 @@
         <div class="track-detail">
           <div class="detail-grid">
             <div class="detail-block">
-              <div class="detail-label">May 23 – May 30</div>
+              <div class="detail-label">Jun 1 – Jun 8</div>
               <div class="detail-title">Analysis &amp; Key Messages</div>
               <ul class="detail-items">
                 <li>Statistical analysis &amp; rate benchmarks</li>
                 <li>Headline findings &amp; narrative</li>
-                <li>Connect to AI Transformation themes</li>
+                <li>Connect to Exec AI Survey Tranche 1 themes</li>
               </ul>
             </div>
             <div class="detail-block">
-              <div class="detail-label">May 31 – Jun 6</div>
+              <div class="detail-label">Jun 9 – Jun 15</div>
               <div class="detail-title">Report &amp; Artifact Design</div>
               <ul class="detail-items">
                 <li>Report draft, design, charts</li>
@@ -960,7 +942,7 @@
               </ul>
             </div>
             <div class="detail-block">
-              <div class="detail-label">Jun 7 – Jun 10</div>
+              <div class="detail-label">Jun 16–20</div>
               <div class="detail-title">Publication &amp; Pre-Launch</div>
               <ul class="detail-items">
                 <li>Report + site published</li>
@@ -982,7 +964,7 @@
             <span class="track-title">Webinar &amp; Post-Launch</span>
           </div>
           <div class="track-meta">
-            <span class="track-dates">Jun 11 – Jun 22</span>
+            <span class="track-dates">Jun 21 – Jun 30</span>
             <span class="track-badge badge-event">Webinar</span>
             <span class="expand-icon">▾</span>
           </div>
@@ -991,20 +973,20 @@
         <div class="track-detail">
           <div class="detail-grid">
             <div class="detail-block">
-              <div class="detail-label">Jun 17</div>
+              <div class="detail-label">Jun 24</div>
               <div class="detail-title">Live Webinar</div>
               <ul class="detail-items">
                 <li>90 min: findings + panel + Q&amp;A</li>
-                <li>Connects to AI Transformation preview</li>
+                <li>Connects to Exec AI tranche 2 preview</li>
               </ul>
             </div>
             <div class="detail-block">
-              <div class="detail-label">Jun 18–22</div>
+              <div class="detail-label">Jun 25–30</div>
               <div class="detail-title">Amplification</div>
               <ul class="detail-items">
                 <li>Full list distribution + press pitch</li>
                 <li>Consulting conversations</li>
-                <li>Tee up AI Transformation launch (Aug)</li>
+                <li>Tee up Exec AI Tranche 2 (Jul)</li>
               </ul>
             </div>
           </div>
@@ -1016,93 +998,55 @@
 
 
   <!-- ══════════════════════════════════════ -->
-  <!-- WORKSTREAM 3: AI TRANSFORMATION         -->
+  <!-- WORKSTREAM 3: EXEC AI SURVEY (3 TRANCHES) -->
   <!-- ══════════════════════════════════════ -->
-  <div class="stream-label">Workstream 03 &nbsp;·&nbsp; AI Transformation <span class="stream-tag">Jul – Sep 2026</span></div>
+  <div class="stream-label">Workstream 03 &nbsp;·&nbsp; Exec AI Survey — 3 Tranches <span class="stream-tag">Apr – Dec 2026</span></div>
   <div class="timeline">
 
+    <!-- TRANCHE 1 -->
     <div class="track" data-t="ai1">
       <div class="track-dot"></div>
       <div class="track-card" onclick="toggleCard(this)">
         <div class="track-summary">
           <div class="track-left">
-            <span class="track-num">WS03 · A</span>
-            <span class="track-title">Design &amp; Data Capture</span>
+            <span class="track-num">WS03 · T1</span>
+            <span class="track-title">Tranche 1 — Strategic Posture &amp; Pricing Economics</span>
           </div>
           <div class="track-meta">
-            <span class="track-dates">Jul 1 – Jul 31</span>
-            <span class="track-badge badge-survey">Survey</span>
+            <span class="track-dates">May – Jul 2026</span>
+            <span class="track-badge badge-ai">Exec AI</span>
+            <span class="track-badge badge-tranche">Tranche 1</span>
             <span class="expand-icon">▾</span>
           </div>
         </div>
-        <div class="track-deliverable">Final AI Transformation survey dataset closed</div>
+        <div class="track-deliverable">Report + artifact + webinar on AI Strategic Posture &amp; Pricing Economics</div>
         <div class="track-detail">
           <div class="detail-grid">
             <div class="detail-block">
-              <div class="detail-label">Jul 1 – Jul 12</div>
-              <div class="detail-title">Instrument Design</div>
+              <div class="detail-label">May — Design &amp; Capture</div>
+              <div class="detail-title">Themes: Strategic Posture · Pricing &amp; Economics</div>
               <ul class="detail-items">
-                <li>Question set &amp; themes finalized</li>
-                <li>Leverage Profit + Pricing Survey learnings</li>
-                <li>Platform configured &amp; tested</li>
+                <li>Survey instrument design</li>
+                <li>Targeted exec respondent outreach</li>
+                <li>Data capture through May</li>
               </ul>
             </div>
             <div class="detail-block">
-              <div class="detail-label">Jul 13 – Jul 31</div>
-              <div class="detail-title">Data Capture</div>
-              <ul class="detail-items">
-                <li>Targeted firm leader / exec respondent outreach</li>
-                <li>Reminder cadence; data closed Jul 31</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="track" data-t="ai1">
-      <div class="track-dot"></div>
-      <div class="track-card" onclick="toggleCard(this)">
-        <div class="track-summary">
-          <div class="track-left">
-            <span class="track-num">WS03 · B</span>
-            <span class="track-title">Analysis, Story &amp; Report</span>
-          </div>
-          <div class="track-meta">
-            <span class="track-dates">Jul 1 – Jul 31</span>
-            <span class="track-badge badge-survey">Survey</span>
-            <span class="expand-icon">▾</span>
-          </div>
-        </div>
-        <div class="track-deliverable">Published AI Transformation report + AI website</div>
-        <div class="track-detail">
-          <div class="detail-grid">
-            <div class="detail-block">
-              <div class="detail-label">Jul 1 – Jul 12</div>
-              <div class="detail-title">Analysis &amp; Key Messages</div>
+              <div class="detail-label">Jun — Analysis &amp; Story</div>
+              <div class="detail-title">Key Messages</div>
               <ul class="detail-items">
                 <li>Statistical analysis of exec responses</li>
-                <li>Headline findings &amp; narrative</li>
+                <li>Narrative: how execs view AI's strategic role</li>
                 <li>Connect to Pricing Survey findings</li>
               </ul>
             </div>
             <div class="detail-block">
-              <div class="detail-label">Jul 13 – Jul 24</div>
-              <div class="detail-title">Report &amp; Artifact Design</div>
+              <div class="detail-label">Jul — Publish &amp; Distribute</div>
+              <div class="detail-title">Artifact &amp; Webinar</div>
               <ul class="detail-items">
-                <li>Report draft, design, charts</li>
-                <li>AI interactive website</li>
-                <li>Blog post series (2–3 posts)</li>
-                <li>Internal review &amp; final</li>
-              </ul>
-            </div>
-            <div class="detail-block">
-              <div class="detail-label">Jul 25 – Jul 31</div>
-              <div class="detail-title">Publication &amp; Pre-Launch</div>
-              <ul class="detail-items">
-                <li>Report + site published</li>
-                <li>Webinar registration live</li>
-                <li>Panelists confirmed</li>
+                <li>Report + blog post series</li>
+                <li>AI-powered interactive site</li>
+                <li>Webinar: executives + LawVision panel</li>
               </ul>
             </div>
           </div>
@@ -1110,38 +1054,93 @@
       </div>
     </div>
 
-    <div class="track" data-t="ai1">
+    <!-- TRANCHE 2 -->
+    <div class="track" data-t="ai2">
       <div class="track-dot"></div>
       <div class="track-card" onclick="toggleCard(this)">
         <div class="track-summary">
           <div class="track-left">
-            <span class="track-num">WS03 · C</span>
-            <span class="track-title">Webinar &amp; Post-Launch</span>
+            <span class="track-num">WS03 · T2</span>
+            <span class="track-title">Tranche 2 — Talent Model, Leverage &amp; Capital Allocation</span>
           </div>
           <div class="track-meta">
-            <span class="track-dates">Aug 1 – Aug 31</span>
-            <span class="track-badge badge-event">Webinar</span>
+            <span class="track-dates">Aug – Oct 2026</span>
+            <span class="track-badge badge-ai">Exec AI</span>
+            <span class="track-badge badge-tranche">Tranche 2</span>
             <span class="expand-icon">▾</span>
           </div>
         </div>
-        <div class="track-deliverable">Live event + distribution + press + pipeline</div>
+        <div class="track-deliverable">Report + artifact + webinar on Talent Model &amp; Capital Allocation</div>
         <div class="track-detail">
           <div class="detail-grid">
             <div class="detail-block">
-              <div class="detail-label">Aug — Live Webinar</div>
-              <div class="detail-title">Findings + Panel</div>
+              <div class="detail-label">Aug — Design &amp; Capture</div>
+              <div class="detail-title">Themes: Talent Model &amp; Leverage · Capital Allocation</div>
               <ul class="detail-items">
-                <li>90 min: findings + panel + Q&amp;A</li>
-                <li>Mark + invited firm leaders</li>
+                <li>Survey instrument (build on T1 findings)</li>
+                <li>Target same exec cohort + new respondents</li>
+                <li>Data capture through Aug</li>
               </ul>
             </div>
             <div class="detail-block">
-              <div class="detail-label">Aug — Amplification</div>
-              <div class="detail-title">Distribution</div>
+              <div class="detail-label">Sep — Analysis &amp; Story</div>
+              <div class="detail-title">Key Messages</div>
               <ul class="detail-items">
-                <li>Full list distribution + press pitch</li>
-                <li>Distribution to AI Newsletter + HubSpot engagers</li>
-                <li>Consulting conversations</li>
+                <li>How execs are restructuring talent in AI era</li>
+                <li>Capital allocation priorities: tech vs. people</li>
+                <li>Connect to Pricing Survey &amp; T1 themes</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Oct — Publish &amp; Distribute</div>
+              <div class="detail-title">Artifact &amp; Webinar</div>
+              <ul class="detail-items">
+                <li>Report + blog post series</li>
+                <li>AI site updated with T2 data</li>
+                <li>Webinar + T3 preview</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRANCHE 3 -->
+    <div class="track" data-t="ai3">
+      <div class="track-dot"></div>
+      <div class="track-card" onclick="toggleCard(this)">
+        <div class="track-summary">
+          <div class="track-left">
+            <span class="track-num">WS03 · T3</span>
+            <span class="track-title">Tranche 3 — Structure, Scale &amp; Year-End Synthesis</span>
+          </div>
+          <div class="track-meta">
+            <span class="track-dates">Nov – Dec 2026</span>
+            <span class="track-badge badge-ai">Exec AI</span>
+            <span class="track-badge badge-tranche">Tranche 3</span>
+            <span class="expand-icon">▾</span>
+          </div>
+        </div>
+        <div class="track-deliverable">Full synthesis report + capstone webinar + 2027 preview</div>
+        <div class="track-detail">
+          <div class="detail-grid">
+            <div class="detail-block">
+              <div class="detail-label">Nov — Design &amp; Capture</div>
+              <div class="detail-title">Theme: Structure &amp; Scale</div>
+              <ul class="detail-items">
+                <li>Final tranche instrument</li>
+                <li>Focus on firm operating model transformation</li>
+                <li>Data capture through Nov</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Dec — Synthesis &amp; Publish</div>
+              <div class="detail-title">Capstone Report</div>
+              <ul class="detail-items">
+                <li>Full Exec AI Survey synthesis (T1+T2+T3)</li>
+                <li>Comprehensive AI-powered report</li>
+                <li>Year-end webinar / virtual event</li>
+                <li>2027 survey preview</li>
               </ul>
             </div>
           </div>
@@ -1223,7 +1222,7 @@
               <ul class="detail-items">
                 <li>Session topic &amp; format confirmed</li>
                 <li>Physical handouts / summary cards</li>
-                <li>Leverage Profit + AI Transformation findings</li>
+                <li>Leverage Profit + Exec AI T1 findings</li>
                 <li>Attendee outreach for LawVision visibility</li>
               </ul>
             </div>
@@ -1281,7 +1280,7 @@
               <div class="detail-title">Structural Change: PE &amp; Consolidation</div>
               <ul class="detail-items">
                 <li>Article: dealing with PE &amp; structural industry change</li>
-                <li>Connects to AI Transformation findings</li>
+                <li>Connects to Exec AI T1/T2 findings</li>
                 <li>Webinar tie-in</li>
               </ul>
             </div>
@@ -1308,7 +1307,7 @@
             <span class="track-title">Creation of AFAs &amp; Alternative Fee Structures</span>
           </div>
           <div class="track-meta">
-            <span class="track-dates">Jul – Oct</span>
+            <span class="track-dates">Jun – Oct</span>
             <span class="track-badge badge-content">Thought Leadership</span>
             <span class="expand-icon">▾</span>
           </div>
@@ -1317,7 +1316,7 @@
         <div class="track-detail">
           <div class="detail-grid">
             <div class="detail-block">
-              <div class="detail-label">Jul–Aug</div>
+              <div class="detail-label">Jun–Jul</div>
               <div class="detail-title">AFA Framework Development</div>
               <ul class="detail-items">
                 <li>Content: types of AFAs + when to use each</li>
@@ -1326,7 +1325,7 @@
               </ul>
             </div>
             <div class="detail-block">
-              <div class="detail-label">Sep–Oct</div>
+              <div class="detail-label">Aug–Oct</div>
               <div class="detail-title">Publication &amp; Webinar</div>
               <ul class="detail-items">
                 <li>Published guide / white paper</li>
@@ -1372,7 +1371,7 @@
               <ul class="detail-items">
                 <li>Live AI demo asset (website / tool)</li>
                 <li>Webinar: AI in pricing operations</li>
-                <li>Connect to AI Transformation findings</li>
+                <li>Connect to Exec AI T2 talent findings</li>
               </ul>
             </div>
           </div>
@@ -1402,7 +1401,7 @@
               <div class="detail-title">Content &amp; Framework</div>
               <ul class="detail-items">
                 <li>Operations transformation framework</li>
-                <li>Connect to AI Transformation: strategic posture themes</li>
+                <li>Connect to Exec AI T2: talent &amp; capital themes</li>
                 <li>Draft article: front-office + back-office integration</li>
               </ul>
             </div>
@@ -1421,144 +1420,6 @@
     </div>
 
   </div><!-- /timeline WS05 -->
-
-
-  <!-- ══════════════════════════════════ -->
-  <!-- WORKSTREAM 6: PE DASHBOARD         -->
-  <!-- ══════════════════════════════════ -->
-  <div class="stream-label">Workstream 06 &nbsp;·&nbsp; PE Dashboard <span class="stream-tag">Build complete · launch timing pending</span></div>
-  <div class="timeline">
-
-    <div class="track" data-t="pe">
-      <div class="track-dot"></div>
-      <div class="track-card" onclick="toggleCard(this)">
-        <div class="track-summary">
-          <div class="track-left">
-            <span class="track-num">WS06 · A</span>
-            <span class="track-title">Build &amp; Data Infrastructure</span>
-          </div>
-          <div class="track-meta">
-            <span class="track-dates">Complete</span>
-            <span class="track-badge badge-done">✓ Done</span>
-            <span class="expand-icon">▾</span>
-          </div>
-        </div>
-        <div class="track-deliverable">Dashboard live + bi-weekly digest template ready to ship</div>
-        <div class="track-detail">
-          <div class="detail-grid">
-            <div class="detail-block">
-              <div class="detail-label">Phase 1 — Dashboard Build ✓</div>
-              <div class="detail-title">Independent dataset &amp; visualization</div>
-              <ul class="detail-items">
-                <li>Metrics &amp; data sources defined (independent of survey programs)</li>
-                <li>Dashboard built</li>
-                <li>Data refresh &amp; QA cadence established</li>
-              </ul>
-            </div>
-            <div class="detail-block">
-              <div class="detail-label">Phase 2 — Digest Template ✓</div>
-              <div class="detail-title">Bi-weekly email format</div>
-              <ul class="detail-items">
-                <li>Email digest design complete</li>
-                <li>Editorial template: top metric movement + commentary</li>
-                <li>Test sends &amp; rendering validated</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="track" data-t="pe">
-      <div class="track-dot"></div>
-      <div class="track-card" onclick="toggleCard(this)">
-        <div class="track-summary">
-          <div class="track-left">
-            <span class="track-num">WS06 · B</span>
-            <span class="track-title">Audience &amp; Launch Readiness</span>
-          </div>
-          <div class="track-meta">
-            <span class="track-dates">TBD</span>
-            <span class="track-badge badge-pe">Launch</span>
-            <span class="expand-icon">▾</span>
-          </div>
-        </div>
-        <div class="track-deliverable">Segmented launch list + announcement assets</div>
-        <div class="track-detail">
-          <div class="detail-grid">
-            <div class="detail-block">
-              <div class="detail-label">Audience Build</div>
-              <div class="detail-title">Two primary lists</div>
-              <ul class="detail-items">
-                <li>AI Newsletter list — full subscriber base</li>
-                <li>HubSpot: contacts engaged with Mark's products</li>
-                <li>De-dupe, segment by engagement tier, suppress unsubscribes</li>
-              </ul>
-            </div>
-            <div class="detail-block">
-              <div class="detail-label">Announcement Assets</div>
-              <div class="detail-title">Launch communications</div>
-              <ul class="detail-items">
-                <li>Launch email + landing page / signup</li>
-                <li>LinkedIn announcement from Mark</li>
-                <li>Sample digest preview</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="track" data-t="pe">
-      <div class="track-dot"></div>
-      <div class="track-card" onclick="toggleCard(this)">
-        <div class="track-summary">
-          <div class="track-left">
-            <span class="track-num">WS06 · C</span>
-            <span class="track-title">Launch &amp; Bi-Weekly Cadence</span>
-          </div>
-          <div class="track-meta">
-            <span class="track-dates">TBD &amp; ongoing</span>
-            <span class="track-badge badge-pe">Cadence</span>
-            <span class="expand-icon">▾</span>
-          </div>
-        </div>
-        <div class="track-deliverable">Live dashboard + recurring bi-weekly digest</div>
-        <div class="track-detail">
-          <div class="detail-grid">
-            <div class="detail-block">
-              <div class="detail-label">Launch Week</div>
-              <div class="detail-title">Public release</div>
-              <ul class="detail-items">
-                <li>Launch email to AI newsletter + HubSpot segments</li>
-                <li>Dashboard goes live</li>
-                <li>Issue #1 of digest</li>
-              </ul>
-            </div>
-            <div class="detail-block">
-              <div class="detail-label">Ongoing Cadence</div>
-              <div class="detail-title">Every other week</div>
-              <ul class="detail-items">
-                <li>Bi-weekly digest production</li>
-                <li>Engagement tracking (open / click / dashboard visits)</li>
-                <li>Quarterly content review &amp; optimization</li>
-              </ul>
-            </div>
-            <div class="detail-block">
-              <div class="detail-label">Pipeline</div>
-              <div class="detail-title">Convert engagement</div>
-              <ul class="detail-items">
-                <li>Tag highly-engaged subscribers in HubSpot</li>
-                <li>Route to consulting conversations</li>
-                <li>Feed into other workstream audiences</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /timeline WS06 -->
 
 
   <!-- ══════════════════════════════════════ -->
@@ -1587,29 +1448,55 @@
     <!-- Profit Survey -->
     <div class="swimlane">
       <div class="swimlane-label">Profit Survey</div>
+      <!-- Jan–Feb: capture -->
       <div class="swimlane-cell span-2"><div class="bar bar-profit">Design · Capture</div></div>
-      <div class="swimlane-cell span-1"><div class="bar bar-profit">Analysis</div></div>
+      <!-- Mar: analysis + report -->
+      <div class="swimlane-cell span-1"><div class="bar bar-profit">Analysis · Story</div></div>
+      <!-- Apr: webinar + post -->
       <div class="swimlane-cell span-1"><div class="bar bar-profit">🎙 Webinar</div></div>
+      <!-- May–Dec: empty -->
       <div class="swimlane-cell span-8 empty"></div>
     </div>
 
     <!-- Pricing Survey -->
     <div class="swimlane">
       <div class="swimlane-label">Pricing Survey</div>
+      <!-- Jan–Mar: empty -->
       <div class="swimlane-cell span-3 empty"></div>
+      <!-- Apr–May: capture -->
       <div class="swimlane-cell span-2"><div class="bar bar-pricing">Design · Capture</div></div>
-      <div class="swimlane-cell span-1"><div class="bar bar-pricing">Analysis · 🎙</div></div>
+      <!-- Jun: analysis + webinar -->
+      <div class="swimlane-cell span-1"><div class="bar bar-pricing">Analysis + Webinar</div></div>
+      <!-- Jul–Dec: empty -->
       <div class="swimlane-cell span-6 empty"></div>
     </div>
 
-    <!-- AI Transformation -->
+    <!-- Exec AI — T1 -->
     <div class="swimlane">
-      <div class="swimlane-label">AI Transformation</div>
-      <div class="swimlane-cell span-6 empty"></div>
+      <div class="swimlane-label">Exec AI · T1</div>
+      <div class="swimlane-cell span-4 empty"></div>
       <div class="swimlane-cell span-1"><div class="bar bar-ai">Capture</div></div>
       <div class="swimlane-cell span-1"><div class="bar bar-ai">Analysis</div></div>
-      <div class="swimlane-cell span-1"><div class="bar bar-ai">🎙 Webinar</div></div>
-      <div class="swimlane-cell span-3 empty"></div>
+      <div class="swimlane-cell span-1"><div class="bar bar-ai">Publish</div></div>
+      <div class="swimlane-cell span-5 empty"></div>
+    </div>
+
+    <!-- Exec AI — T2 -->
+    <div class="swimlane">
+      <div class="swimlane-label">Exec AI · T2</div>
+      <div class="swimlane-cell span-7 empty"></div>
+      <div class="swimlane-cell span-1"><div class="bar bar-ai">Capture</div></div>
+      <div class="swimlane-cell span-1"><div class="bar bar-ai">Analysis</div></div>
+      <div class="swimlane-cell span-1"><div class="bar bar-ai">Publish</div></div>
+      <div class="swimlane-cell span-2 empty"></div>
+    </div>
+
+    <!-- Exec AI — T3 -->
+    <div class="swimlane">
+      <div class="swimlane-label">Exec AI · T3</div>
+      <div class="swimlane-cell span-9 empty"></div>
+      <div class="swimlane-cell span-1"><div class="bar bar-ai">Capture</div></div>
+      <div class="swimlane-cell span-2"><div class="bar bar-ai">Synthesis · Publish</div></div>
     </div>
 
     <!-- Confirmed Events -->
@@ -1617,7 +1504,7 @@
       <div class="swimlane-label">Confirmed Events</div>
       <div class="swimlane-cell span-4 empty"></div>
       <div class="swimlane-cell span-1"><div class="bar bar-events">★ May 13</div></div>
-      <div class="swimlane-cell span-1"><div class="bar bar-events">★ Jun 25</div></div>
+      <div class="swimlane-cell span-1"><div class="bar bar-events">★ Jun 25 NYC</div></div>
       <div class="swimlane-cell span-6 empty"></div>
     </div>
 
@@ -1625,17 +1512,17 @@
     <div class="swimlane">
       <div class="swimlane-label">Ind. Transformation</div>
       <div class="swimlane-cell span-6 empty"></div>
-      <div class="swimlane-cell span-2"><div class="bar bar-industry">Exec Pricing</div></div>
-      <div class="swimlane-cell span-2"><div class="bar bar-industry">PE / Structural</div></div>
+      <div class="swimlane-cell span-2"><div class="bar bar-industry">Exec Pricing Article</div></div>
+      <div class="swimlane-cell span-2"><div class="bar bar-industry">PE / Structural Change</div></div>
       <div class="swimlane-cell span-2"><div class="bar bar-industry">Year-End Synthesis</div></div>
     </div>
 
     <!-- AFAs -->
     <div class="swimlane">
       <div class="swimlane-label">AFAs &amp; AI Pricing</div>
-      <div class="swimlane-cell span-6 empty"></div>
-      <div class="swimlane-cell span-4"><div class="bar bar-afa">AFA Framework + AI Use Cases</div></div>
-      <div class="swimlane-cell span-2"><div class="bar bar-afa">Webinar · Demo</div></div>
+      <div class="swimlane-cell span-5 empty"></div>
+      <div class="swimlane-cell span-5"><div class="bar bar-afa">AFA Framework + AI Use Cases</div></div>
+      <div class="swimlane-cell span-2"><div class="bar bar-afa">Webinars · Demo Asset</div></div>
     </div>
 
     <!-- Front/Back Office -->
@@ -1643,13 +1530,6 @@
       <div class="swimlane-label">Front/Back Office</div>
       <div class="swimlane-cell span-8 empty"></div>
       <div class="swimlane-cell span-4"><div class="bar bar-themes">Article + Webinar</div></div>
-    </div>
-
-    <!-- PE Dashboard -->
-    <div class="swimlane">
-      <div class="swimlane-label">PE Dashboard</div>
-      <div class="swimlane-cell span-5 empty"></div>
-      <div class="swimlane-cell span-7"><div class="bar bar-pe bar-tentative">Bi-weekly digest · Launch TBD</div></div>
     </div>
 
   </div><!-- /swimlane-container -->
@@ -1684,7 +1564,7 @@
     <div class="event-pill">
       <div class="event-icon">📈</div>
       <div class="event-info">
-        <div class="event-date">Jun 17, 2026</div>
+        <div class="event-date">Jun 2026</div>
         <div class="event-name">Pricing Survey Webinar</div>
         <div class="event-partner">LawVision Research Series</div>
       </div>
@@ -1695,7 +1575,7 @@
   <!-- SUMMARY GRID -->
   <div class="summary">
     <h2>At a Glance — Full Year</h2>
-    <div class="summary-sub">6 workstreams · 3 surveys (Profit · Pricing · AI Transformation) · PE Dashboard · 2 confirmed external events · 4 thematic campaigns</div>
+    <div class="summary-sub">5 workstreams · 3 surveys · 3 exec AI tranches · 2 confirmed external events · 4 thematic campaigns</div>
     <div class="summary-grid">
       <div class="summary-cell s-profit">
         <div class="s-track">WS01 · Profit Survey</div>
@@ -1707,13 +1587,25 @@
         <div class="s-track">WS02 · Pricing Survey</div>
         <div class="s-title">Design → Webinar</div>
         <div class="s-date">Apr – Jun 2026</div>
-        <div class="s-output">Report + AI site + panel webinar (Jun 17)</div>
+        <div class="s-output">Report + AI site + panel webinar</div>
       </div>
       <div class="summary-cell s-ai">
-        <div class="s-track">WS03 · AI Transformation</div>
+        <div class="s-track">WS03 · Exec AI · T1</div>
         <div class="s-title">Strategic Posture &amp; Pricing Economics</div>
-        <div class="s-date">Jun – Aug 2026</div>
+        <div class="s-date">May – Jul 2026</div>
         <div class="s-output">Report + artifact + webinar</div>
+      </div>
+      <div class="summary-cell s-ai">
+        <div class="s-track">WS03 · Exec AI · T2</div>
+        <div class="s-title">Talent Model &amp; Capital Allocation</div>
+        <div class="s-date">Aug – Oct 2026</div>
+        <div class="s-output">Report + artifact + webinar</div>
+      </div>
+      <div class="summary-cell s-ai">
+        <div class="s-track">WS03 · Exec AI · T3</div>
+        <div class="s-title">Structure, Scale &amp; Synthesis</div>
+        <div class="s-date">Nov – Dec 2026</div>
+        <div class="s-output">Full synthesis + capstone event</div>
       </div>
       <div class="summary-cell s-event">
         <div class="s-track">WS04 · Confirmed Event</div>
@@ -1736,7 +1628,7 @@
       <div class="summary-cell s-afa">
         <div class="s-track">WS05 · T2</div>
         <div class="s-title">Creation of AFAs</div>
-        <div class="s-date">Jul – Oct</div>
+        <div class="s-date">Jun – Oct</div>
         <div class="s-output">Framework guide + webinar</div>
       </div>
       <div class="summary-cell s-afa">
@@ -1750,12 +1642,6 @@
         <div class="s-title">Supercharge Front &amp; Back Office</div>
         <div class="s-date">Sep – Dec</div>
         <div class="s-output">Playbook + webinar</div>
-      </div>
-      <div class="summary-cell s-pe">
-        <div class="s-track">WS06 · PE Dashboard</div>
-        <div class="s-title">Dashboard + Bi-Weekly Digest</div>
-        <div class="s-date">Build ✓ · Launch TBD</div>
-        <div class="s-output">Live dashboard · digest to AI newsletter + HubSpot engagers</div>
       </div>
     </div>
   </div>
